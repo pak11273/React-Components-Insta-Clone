@@ -25,7 +25,6 @@ const App = () => {
   // const [searchTerm, setSearch] = useState("")
 
   const likePost = postId => {
-    console.log("postid: ", postId)
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
 
@@ -43,8 +42,6 @@ const App = () => {
         }
         return post
       })
-
-      console.log("newPosts: ", newPosts)
 
       setPosts(newPosts)
   };
