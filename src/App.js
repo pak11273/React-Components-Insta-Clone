@@ -23,6 +23,12 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   const [posts, setPosts] = useState(dummyData);
   const [searchTerm, setSearch] = useState("");
+  const [comment, setComment] = useState("");
+
+  const commentChange = (e) => {
+    console.log(e.target.value);
+  };
+
   useEffect(() => {
     searchByUsername();
   }, [searchTerm]);
@@ -67,7 +73,7 @@ const App = () => {
     <div className="App">
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar searchTerm={searchTerm} inputChange={inputChange} />
-      <Posts likePost={likePost} posts={posts} />
+      <Posts likePost={likePost} posts={posts} commentChange={commentChange} />
       {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
